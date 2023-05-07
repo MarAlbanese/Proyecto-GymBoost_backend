@@ -3,7 +3,7 @@ const app = express(); // Se guarda en una constante la funcion express
 const multer = require('multer');
 const mimeTypes = require('mime-types');
 
-const storage = multer.diskStorage({
+const storage = multer.diskStorage({   
     destination: 'uploads/',
     filename: function(req, file, cb){
         cb("",Date.now() + file.originalname + "." + mimeTypes.extension(file.mimetype));
@@ -29,5 +29,5 @@ app.listen(3300, ()=> console.log ("Server started"));
 // Pasos:  
 // Comando para crear el json : npm init -yes
 // npm install express multer mime-types (express es para hacer peticiones http), 
-// (muler lee la informacion del archivo y permite guardar la informacion en la carpeta que quiera)
+// (multer lee la informacion del archivo y permite guardar la informacion en la carpeta que quiera)
 // (mime-type me informa el tipo de archivo del que se trata -ejemplo: jpg npg)
